@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="" onchange="">
+    <input type="text" id="Amount" />
+    <select value="From Currency" id="currencyFrom">
+        <option value="vnd">VietNamDong</option>
+        <option value="usd">USD</option>
+    </select>
+    <select value="To Currency" id="currencyTo">
+        <option value="vnd">VietNamDong</option>
+        <option value="usd">USD</option>
+    </select>
+    <input type="button" value="Convert" onclick="chuyen()" />
+    <div id="ketqua"></div>
+
+    <script>
+        function chuyen() {
+            var a= parseInt(document.getElementById("Amount").value);
+            var currencyFrom=document.getElementById('currencyFrom').value;
+            var currencyTo=document.getElementById('currencyTo').value;
+            if(currencyFrom==='usd'&&currencyTo==='vnd'){
+                result=a*23000;
+            }else if(currencyFrom==='vnd'&& currencyTo==='usd'){
+                result=a/23000;
+            }
+            document.getElementById('ketqua').innerHTML = result;
+        }
+    </script>
+</body>
+</html>
